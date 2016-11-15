@@ -183,6 +183,7 @@
 
 
     <PreferenceScreen android:icon="@drawable/ic_lockscreen" android:title="Lockscreen" android:summary="Carrier Label, Clock Colors.......">
+        <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference android:defaultValue="17" android:key="ts_aod_brightness" android:title="AOD brightness" app:maxValue="255" app:minValue="0" app:rebootDevice="true"/>
         <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:defaultValue="false" android:key="lockscreen_rotate" android:summaryOff="Off" android:summaryOn="On" android:title="Lockscreen Rotation" app:isSilent="false" app:packageNameToKill="com.android.systemui"/>
         <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:defaultValue="true" android:key="unlock_guide_text" android:summaryOff="Hide" android:summaryOn="Show" android:title="Text Swipe to unlock" app:isSilent="false" app:packageNameToKill="com.android.systemui"/>
         <PreferenceCategory android:title="Carrier text">
@@ -202,12 +203,12 @@
     </PreferenceScreen>
 
 
-    <PreferenceScreen android:icon="@drawable/ic_home" android:title="Homescreen Settings Menue" android:summary="TW Page Effect......">
+    <PreferenceScreen android:icon="@drawable/ic_home" android:title="Homescreen Settings Menu" android:summary="TW Page Effect......">
         <com.wubydax.romcontrol.v2.prefs.MyListPreference android:entries="@array/tw_effect_entries" android:title="Touchwiz Page Effect" android:key="tw_page_effect" android:defaultValue="1" android:entryValues="@array/tw_effect_values" app:isSilent="false" app:packageNameToKill="com.sec.android.app.launcher"/>
     </PreferenceScreen>
 
 
-    <PreferenceScreen android:icon="@drawable/ic_power" android:title="Extended Power Menue" android:summary="Show/Hide Buttons, Backgrounds.....">
+    <PreferenceScreen android:icon="@drawable/ic_power" android:title="Extended Power Menu" android:summary="Show/Hide Buttons, Backgrounds.....">
         <PreferenceCategory android:title="Show/Hide Buttons">
             <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="Reboot Recovery Button" android:key="reboot_recovery" android:defaultValue="false" android:summaryOn="Reboot Recovery will be shown" android:summaryOff="Currently removed" />
             <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="Emergency Mode Button" android:key="power_emergency" android:defaultValue="true" android:summaryOn="Emergency mode will be shown" android:summaryOff="Currently removed" />
@@ -217,7 +218,7 @@
             <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="Airplane Mode" android:key="power_menu_airplane" android:defaultValue="false" android:summaryOn="Airplane Mode will be shown" android:summaryOff="Currently removed" />
         </PreferenceCategory>
         <PreferenceCategory android:title="Background">
-            <PreferenceScreen android:title="Custom bg for Reboot Menue">
+            <PreferenceScreen android:title="Custom bg for Reboot Menu">
                 <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:defaultValue="false" android:key="enable_gear_custom_bg" android:summaryOff="Disabled" android:summaryOn="Enabled" android:title="Enable custom background"/>
                 <PreferenceCategory android:dependency="enable_gear_custom_bg" android:title="General bg preferences">
                     <com.wubydax.romcontrol.v2.prefs.MyListPreference android:defaultValue="0" android:entries="@array/custom_bg_type_entries" android:entryValues="@array/custom_bg_type_values" android:key="gear_custom_bg_type" android:title="Background type" app:dependentValue="0"/>
@@ -237,7 +238,7 @@
     </PreferenceScreen>
 
 
-    <PreferenceScreen android:icon="@drawable/ic_phone1" android:title="Calls Menue" android:summary="Auto Call Record.....">
+    <PreferenceScreen android:icon="@drawable/ic_phone1" android:title="Calls Menu" android:summary="Auto Call Record.....">
         <PreferenceCategory android:title="AutoCallRecord">
             <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="Incoming auto call record" android:key="auto_call_record_in" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
             <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="Outgoing auto call record" android:key="auto_call_record_out" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
@@ -245,7 +246,7 @@
     </PreferenceScreen>
 
 
-    <PreferenceScreen android:icon="@drawable/ic_advanced" android:title="Advanced Settings Menue" android:summary="Backlight Duration, USB .....">
+    <PreferenceScreen android:icon="@drawable/ic_advanced" android:title="Advanced Settings Menu" android:summary="Backlight Duration, USB .....">
         <com.wubydax.romcontrol.v2.prefs.MyListPreference android:defaultValue="3000" android:icon="@drawable/backlight" android:key="button_key_light" android:entries="@array/button_key_light_entries" android:entryValues="@array/button_key_light_values" android:summary="%s" android:title="Hardkeys backlight duration"/>
         <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="USB plug in/out wakeup" android:icon="@drawable/usb" android:key="usb_plugged" android:defaultValue="true" android:summaryOn="On" android:summaryOff="Off" />
         <com.wubydax.romcontrol.v2.prefs.OpenAppPreference android:summary="Toolbox" app:componentName="com.wubydax.toolboxsettings/com.wubydax.toolboxsettings.ToolboxSettings"/>
