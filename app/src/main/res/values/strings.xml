@@ -12,7 +12,7 @@
     <!--You should have received a copy of the GNU General Public License-->
     <!--along with this program.  If not, see <http://www.gnu.org/licenses/>.*/-->
 <resources>
-    <string name="app_name">MinotaurusEatsNougat V1</string>
+    <string name="app_name">Minotaurus V3</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -58,7 +58,7 @@
     <string name="run_script_confirm_dialog_positive_button">Yes, run</string>
     <string name="find_app">Find App</string>
     <string name="reboot_required_dialog_title">Device reboot required</string>
-    <string name="reboot_required_dialog_message">For this action to take effect, full device reboot is required. Would you like to reboot now?</string>
+    <string name="reboot_required_dialog_message">For this action to take full effect, full device reboot is required. Would you like to reboot now?</string>
     <string name="reboot_later_negative_button">later</string>
     <string name="reboot_now_dialog_button">reboot now</string>
     <string name="imminent_reboot_warning">Your device will reboot IMMEDIATELY upon script completion!!!</string>
