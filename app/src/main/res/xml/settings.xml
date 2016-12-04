@@ -68,13 +68,4 @@
 
 
 
-    <PreferenceScreen
-        android:title="Download Donator App"
-        android:icon="@drawable/ic_pro"
-        android:summary="Link to Playstore">
-        <intent android:action="android.intent.action.VIEW"
-            android:data="https://google.de" />
-    </PreferenceScreen>
-
-
 </PreferenceScreen>

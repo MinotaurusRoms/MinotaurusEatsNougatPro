@@ -31,13 +31,13 @@ android {
     compileSdkVersion 24
     buildToolsVersion "23.0.3"
     defaultConfig {
-        applicationId "com.asc1977.romcontrol"
+        applicationId "com.asc1977.romcontrolpro"
         minSdkVersion 21
         //noinspection OldTargetApi
         targetSdkVersion 22
         versionCode 2
         versionName "2.0"
-        project.archivesBaseName = "MinotaurusEatsNougat V3"
+        project.archivesBaseName = "MinotaurusEatsNougatPro V3"
     }
 
     buildTypes {
