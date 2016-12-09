@@ -36,6 +36,18 @@
             <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference android:title="Download Text Color" android:defaultValue="#ffffff" android:key="network_traffic_download_color" android:dependency="is_global_sb_color" app:packageNameToKill="com.android.systemui" app:isSilent="false"/>
             <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference android:title="Traffic Arrows Color" android:key="network_traffic_arrow_color" android:defaultValue="#ffffff" android:dependency="is_global_sb_color" app:packageNameToKill="com.android.systemui" app:isSilent="false"/>
         </PreferenceCategory>
+        <PreferenceCategory android:title="Statusbar Clock Options" android:summary="Custom clock settings">
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="Show Clock and Date" android:key="status_bar_clock" android:defaultValue="true" android:summaryOn="Clock shown" android:summaryOff="Clock hidden" />
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="Uppercase Text Clock" android:key="normal_upper" android:dependency="status_bar_clock" android:defaultValue="false" android:summaryOn="Uppercase enabled" android:summaryOff="Disabled" />
+            <com.wubydax.romcontrol.v2.prefs.MyListPreference android:entries="@array/clock_format_entries" android:title="Clock Format" android:key="statusbar_clock_format" android:dependency="status_bar_clock" android:defaultValue="1" android:entryValues="@array/clock_format_values" />
+            <com.wubydax.romcontrol.v2.prefs.MyListPreference android:entries="@array/clock_style_entries" android:title="Clock Location" android:key="statusbar_clock_style" android:dependency="status_bar_clock" android:defaultValue="0" android:entryValues="@array/clock_style_values" />
+            <com.wubydax.romcontrol.v2.prefs.MyListPreference android:entries="@array/entries_status_bar_am_pm" android:title="Clock AM/PM" android:key="statusbar_clock_am_pm_style" android:dependency="status_bar_clock" android:defaultValue="2" android:entryValues="@array/values_status_bar_am_pm" />
+            <com.wubydax.romcontrol.v2.prefs.MyListPreference android:entries="@array/clock_font_style_entries" android:title="Clock Font Style" android:key="statusbar_clock_font_style" android:dependency="status_bar_clock" android:defaultValue="5" android:entryValues="@array/clock_font_style_values" />
+            <com.wubydax.romcontrol.v2.prefs.MySeekBarPreference android:title="Clock Scaling" android:key="statusbar_clock_scale" android:summary="Adjust clock size" android:dependency="status_bar_clock" android:defaultValue="15" app:minValue="5" app:maxValue="25" app:unitsValue="dp" />
+            <com.wubydax.romcontrol.v2.prefs.MyListPreference android:entries="@array/clock_date_display_entries" android:title="Date Display Type" android:key="statusbar_clock_date_display" android:dependency="status_bar_clock" android:defaultValue="0" android:entryValues="@array/clock_date_display_values" />
+            <com.wubydax.romcontrol.v2.prefs.MyListPreference android:entries="@array/clock_date_style_entries" android:title="Date Style" android:key="statusbar_clock_date_style" android:dependency="status_bar_clock" android:defaultValue="0" android:entryValues="@array/clock_date_style_values" />
+            <com.wubydax.romcontrol.v2.prefs.MyListPreference android:entries="@array/clock_date_format_entries_values" android:title="Date Format" android:key="statusbar_clock_date_format" android:dependency="status_bar_clock" android:defaultValue="EEE" android:entryValues="@array/clock_date_format_entries_values" />
+        </PreferenceCategory>
     </PreferenceScreen>
 
 
@@ -48,14 +60,12 @@
 
 
     <PreferenceScreen android:icon="@drawable/ic_advanced" android:title="Advanced Settings Menu" android:summary="Backlight Duration, USB .....">
-        <PreferenceCategory android:title="USB"  >
-            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="USB plug in/out wakeup" android:icon="@drawable/usb" android:key="usb_plugged" android:defaultValue="true" android:summaryOn="On" android:summaryOff="Off" />
-        </PreferenceCategory>
-        <PreferenceCategory android:title="DPI Switcher" android:summary="Matrix Options" >
-            <PreferenceScreen android:persistent="false" android:title="Switch the DPI" android:summary="Display dpi customization">
-                <intent android:targetPackage="com.wubydax.changedpi" android:action="android.intent.action.MAIN" android:targetClass="com.wubydax.changedpi.MainActivity" />
-            </PreferenceScreen>
-        </PreferenceCategory>
+        <PreferenceCategory android:title="Apps"  />
+            <com.wubydax.romcontrol.v2.prefs.OpenAppPreference android:summary="" app:componentName="com.wubydax.changedpi/com.wubydax.changedpi.MainActivity" />
+            <com.wubydax.romcontrol.v2.prefs.OpenAppPreference android:summary="" app:componentName="com.audlabs.viperfx/com.audlabs.viperfx.main.MainActivity" />
+            <com.wubydax.romcontrol.v2.prefs.OpenAppPreference android:summary="" app:componentName="com.atmos.daxappUI/com.atmos.daxappUI.MainActivity" />
+        <PreferenceCategory android:title="USB"  />
+            <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="USB plug in/out wakeup" android:key="usb_plugged" android:defaultValue="true" android:summaryOn="On" android:summaryOff="Off" />
         <PreferenceCategory android:title="Matrix Animations Features" android:summary="Matrix Options" >
             <com.wubydax.romcontrol.v2.prefs.MySwitchPreference android:title="Matrix Recents Animation" android:key="matrix_anim" android:summaryOn="Enabled " android:summaryOff="Disabled"  />
             <com.wubydax.romcontrol.v2.prefs.ColorPickerPreference android:title="Matrix Text Colorized" android:dependency="matrix_anim" android:summary="Choose Matrix Text color" android:key="recents_matrix_anim_text_color" android:defaultValue="#1eff00" app:packageNameToKill="com.android.systemui" app:isSilent="false"/>
